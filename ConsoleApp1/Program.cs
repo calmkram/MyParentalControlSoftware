@@ -72,7 +72,7 @@ namespace ConsoleApp1
                 Microsoft.Win32.TaskScheduler.Task myTask = myTasks.ElementAt(0);
                 myTask.Definition.Triggers.Clear();
                 WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
-                myWeekdayTrigger.StartBoundary = DateTime.Parse("4/22/2018 4:59:30 PM");
+                myWeekdayTrigger.StartBoundary = DateTime.Parse("4:59:30 PM");
                 myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
                 myWeekdayTrigger.WeeksInterval = 1;
                 myTask.Definition.Triggers.Add(myWeekdayTrigger);

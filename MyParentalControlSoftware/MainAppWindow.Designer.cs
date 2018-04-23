@@ -42,12 +42,12 @@
             this.cmbSatFromTime = new System.Windows.Forms.ComboBox();
             this.cmbFriToTime = new System.Windows.Forms.ComboBox();
             this.cmbFriFromTime = new System.Windows.Forms.ComboBox();
-            this.cmbThurToTime = new System.Windows.Forms.ComboBox();
-            this.cmbThurFromTime = new System.Windows.Forms.ComboBox();
+            this.cmbThuToTime = new System.Windows.Forms.ComboBox();
+            this.cmbThuFromTime = new System.Windows.Forms.ComboBox();
             this.cmbWedToTime = new System.Windows.Forms.ComboBox();
             this.cmbWedFromTime = new System.Windows.Forms.ComboBox();
-            this.cmbTuesToTime = new System.Windows.Forms.ComboBox();
-            this.cmbTuesFromTime = new System.Windows.Forms.ComboBox();
+            this.cmbTueToTime = new System.Windows.Forms.ComboBox();
+            this.cmbTueFromTime = new System.Windows.Forms.ComboBox();
             this.cmbMonToTime = new System.Windows.Forms.ComboBox();
             this.cmbMonFromTime = new System.Windows.Forms.ComboBox();
             this.cmbSunToTime = new System.Windows.Forms.ComboBox();
@@ -63,7 +63,6 @@
             this.grpbxAppAndWebAccess = new System.Windows.Forms.GroupBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grpbxTimeRestrictions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,12 +98,12 @@
             this.grpbxTimeRestrictions.Controls.Add(this.cmbSatFromTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbFriToTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbFriFromTime);
-            this.grpbxTimeRestrictions.Controls.Add(this.cmbThurToTime);
-            this.grpbxTimeRestrictions.Controls.Add(this.cmbThurFromTime);
+            this.grpbxTimeRestrictions.Controls.Add(this.cmbThuToTime);
+            this.grpbxTimeRestrictions.Controls.Add(this.cmbThuFromTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbWedToTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbWedFromTime);
-            this.grpbxTimeRestrictions.Controls.Add(this.cmbTuesToTime);
-            this.grpbxTimeRestrictions.Controls.Add(this.cmbTuesFromTime);
+            this.grpbxTimeRestrictions.Controls.Add(this.cmbTueToTime);
+            this.grpbxTimeRestrictions.Controls.Add(this.cmbTueFromTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbMonToTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbMonFromTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbSunToTime);
@@ -228,23 +227,23 @@
             this.cmbFriFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbFriFromTime.TabIndex = 17;
             // 
-            // cmbThurToTime
+            // cmbThuToTime
             // 
-            this.cmbThurToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbThurToTime.FormattingEnabled = true;
-            this.cmbThurToTime.Location = new System.Drawing.Point(181, 147);
-            this.cmbThurToTime.Name = "cmbThurToTime";
-            this.cmbThurToTime.Size = new System.Drawing.Size(75, 21);
-            this.cmbThurToTime.TabIndex = 16;
+            this.cmbThuToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbThuToTime.FormattingEnabled = true;
+            this.cmbThuToTime.Location = new System.Drawing.Point(181, 147);
+            this.cmbThuToTime.Name = "cmbThuToTime";
+            this.cmbThuToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbThuToTime.TabIndex = 16;
             // 
-            // cmbThurFromTime
+            // cmbThuFromTime
             // 
-            this.cmbThurFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbThurFromTime.FormattingEnabled = true;
-            this.cmbThurFromTime.Location = new System.Drawing.Point(95, 147);
-            this.cmbThurFromTime.Name = "cmbThurFromTime";
-            this.cmbThurFromTime.Size = new System.Drawing.Size(75, 21);
-            this.cmbThurFromTime.TabIndex = 15;
+            this.cmbThuFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbThuFromTime.FormattingEnabled = true;
+            this.cmbThuFromTime.Location = new System.Drawing.Point(95, 147);
+            this.cmbThuFromTime.Name = "cmbThuFromTime";
+            this.cmbThuFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbThuFromTime.TabIndex = 15;
             // 
             // cmbWedToTime
             // 
@@ -264,23 +263,23 @@
             this.cmbWedFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbWedFromTime.TabIndex = 13;
             // 
-            // cmbTuesToTime
+            // cmbTueToTime
             // 
-            this.cmbTuesToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTuesToTime.FormattingEnabled = true;
-            this.cmbTuesToTime.Location = new System.Drawing.Point(181, 95);
-            this.cmbTuesToTime.Name = "cmbTuesToTime";
-            this.cmbTuesToTime.Size = new System.Drawing.Size(75, 21);
-            this.cmbTuesToTime.TabIndex = 12;
+            this.cmbTueToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTueToTime.FormattingEnabled = true;
+            this.cmbTueToTime.Location = new System.Drawing.Point(181, 95);
+            this.cmbTueToTime.Name = "cmbTueToTime";
+            this.cmbTueToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbTueToTime.TabIndex = 12;
             // 
-            // cmbTuesFromTime
+            // cmbTueFromTime
             // 
-            this.cmbTuesFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTuesFromTime.FormattingEnabled = true;
-            this.cmbTuesFromTime.Location = new System.Drawing.Point(95, 95);
-            this.cmbTuesFromTime.Name = "cmbTuesFromTime";
-            this.cmbTuesFromTime.Size = new System.Drawing.Size(75, 21);
-            this.cmbTuesFromTime.TabIndex = 11;
+            this.cmbTueFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTueFromTime.FormattingEnabled = true;
+            this.cmbTueFromTime.Location = new System.Drawing.Point(95, 95);
+            this.cmbTueFromTime.Name = "cmbTueFromTime";
+            this.cmbTueFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbTueFromTime.TabIndex = 11;
             // 
             // cmbMonToTime
             // 
@@ -424,20 +423,11 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.Close_Click);
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 400);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(602, 40);
-            this.textBox1.TabIndex = 0;
-            // 
             // MainAppWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 488);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(632, 401);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.grpbxAppAndWebAccess);
@@ -474,12 +464,12 @@
         private System.Windows.Forms.ComboBox cmbSatFromTime;
         private System.Windows.Forms.ComboBox cmbFriToTime;
         private System.Windows.Forms.ComboBox cmbFriFromTime;
-        private System.Windows.Forms.ComboBox cmbThurToTime;
-        private System.Windows.Forms.ComboBox cmbThurFromTime;
+        private System.Windows.Forms.ComboBox cmbThuToTime;
+        private System.Windows.Forms.ComboBox cmbThuFromTime;
         private System.Windows.Forms.ComboBox cmbWedToTime;
         private System.Windows.Forms.ComboBox cmbWedFromTime;
-        private System.Windows.Forms.ComboBox cmbTuesToTime;
-        private System.Windows.Forms.ComboBox cmbTuesFromTime;
+        private System.Windows.Forms.ComboBox cmbTueToTime;
+        private System.Windows.Forms.ComboBox cmbTueFromTime;
         private System.Windows.Forms.ComboBox cmbMonToTime;
         private System.Windows.Forms.ComboBox cmbMonFromTime;
         private System.Windows.Forms.ComboBox cmbSunToTime;
@@ -491,7 +481,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnDisableUser;
         private System.Windows.Forms.Button btnEnableUser;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

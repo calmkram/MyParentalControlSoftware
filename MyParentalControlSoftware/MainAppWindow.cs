@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using System.Management;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
-using TaskScheduler;
 
 namespace MyParentalControlSoftware
 {

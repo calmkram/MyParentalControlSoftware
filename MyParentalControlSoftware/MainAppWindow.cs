@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Management;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
+using Microsoft.Win32.TaskScheduler;
 
 namespace MyParentalControlSoftware
 {
@@ -28,7 +29,7 @@ namespace MyParentalControlSoftware
             InitializeComponent();
 
             cmbUserList.Items.Clear();
-            SelectQuery myQuery = new SelectQuery("Win32_UserAccount", "LocalAccount=true AND SIDType=1 AND AccountType=512");
+            SelectQuery myQuery = new SelectQuery("Win32_UserAccount");
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(myQuery);
             foreach (ManagementObject envVar in searcher.Get())
             {
@@ -224,7 +225,8 @@ namespace MyParentalControlSoftware
 
         private void Save_Click(object sender, EventArgs e)
         {
-            DateTime dtFromTime, dtToTime;
+            DateTime dtSunFromTime, dtMonFromTime, dtTueFromTime, dtWedFromTime, dtThuFromTime, dtFriFromTime, dtSatFromTime;
+            DateTime dtSunToTime, dtMonToTime, dtTueToTime, dtWedToTime, dtThuToTime, dtFriToTime, dtSatToTime;
             String sSelectedUserName = "", sFromTime = "1/1/1900 ", sToTime = "1/1/1900 ";
             LogonTime lSunLogonTime, lMonLogonTime, lTueLogonTime, lWedLogonTime;
             LogonTime lThuLogonTime, lFriLogonTime, lSatLogonTime;
@@ -237,63 +239,130 @@ namespace MyParentalControlSoftware
             pctxLocalMachine = new PrincipalContext(ContextType.Machine);
             usrpSelectedUser = UserPrincipal.FindByIdentity(pctxLocalMachine, IdentityType.SamAccountName, sSelectedUserName);
 
-
             sFromTime = sFromTime + cmbSunFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbSunToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lSunLogonTime = new LogonTime(System.DayOfWeek.Sunday, dtFromTime, dtToTime);
+            dtSunFromTime = DateTime.Parse(sFromTime);
+            dtSunToTime = DateTime.Parse(sToTime);
+            lSunLogonTime = new LogonTime(System.DayOfWeek.Sunday, dtSunFromTime, dtSunToTime);
             lstLogonTimes.Add(lSunLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbMonFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbMonToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lMonLogonTime = new LogonTime(System.DayOfWeek.Monday, dtFromTime, dtToTime);
+            dtMonFromTime = DateTime.Parse(sFromTime);
+            dtMonToTime = DateTime.Parse(sToTime);
+            lMonLogonTime = new LogonTime(System.DayOfWeek.Monday, dtMonFromTime, dtMonToTime);
             lstLogonTimes.Add(lMonLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbTuesFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbTuesToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lTueLogonTime = new LogonTime(System.DayOfWeek.Tuesday, dtFromTime, dtToTime);
+            dtTueFromTime = DateTime.Parse(sFromTime);
+            dtTueToTime = DateTime.Parse(sToTime);
+            lTueLogonTime = new LogonTime(System.DayOfWeek.Tuesday, dtTueFromTime, dtTueToTime);
             lstLogonTimes.Add(lTueLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbWedFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbWedToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lWedLogonTime = new LogonTime(System.DayOfWeek.Wednesday, dtFromTime, dtToTime);
+            dtWedFromTime = DateTime.Parse(sFromTime);
+            dtWedToTime = DateTime.Parse(sToTime);
+            lWedLogonTime = new LogonTime(System.DayOfWeek.Wednesday, dtWedFromTime, dtWedToTime);
             lstLogonTimes.Add(lWedLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbThurFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbThurToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lThuLogonTime = new LogonTime(System.DayOfWeek.Thursday, dtFromTime, dtToTime);
+            dtThuFromTime = DateTime.Parse(sFromTime);
+            dtThuToTime = DateTime.Parse(sToTime);
+            lThuLogonTime = new LogonTime(System.DayOfWeek.Thursday, dtThuFromTime, dtThuToTime);
             lstLogonTimes.Add(lThuLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbFriFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbFriToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lFriLogonTime = new LogonTime(System.DayOfWeek.Friday, dtFromTime, dtToTime);
+            dtFriFromTime = DateTime.Parse(sFromTime);
+            dtFriToTime = DateTime.Parse(sToTime);
+            lFriLogonTime = new LogonTime(System.DayOfWeek.Friday, dtFriFromTime, dtFriToTime);
             lstLogonTimes.Add(lFriLogonTime);
 
             sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
             sFromTime = sFromTime + cmbSatFromTime.SelectedItem.ToString();
             sToTime = sToTime + cmbSatToTime.SelectedItem.ToString();
-            dtFromTime = DateTime.Parse(sFromTime);
-            dtToTime = DateTime.Parse(sToTime);
-            lSatLogonTime = new LogonTime(System.DayOfWeek.Saturday, dtFromTime, dtToTime);
+            dtSatFromTime = DateTime.Parse(sFromTime);
+            dtSatToTime = DateTime.Parse(sToTime);
+            lSatLogonTime = new LogonTime(System.DayOfWeek.Saturday, dtSatFromTime, dtSatToTime);
             lstLogonTimes.Add(lSatLogonTime);
 
-            
+            // Access the Task Scheduler and change the trigger times for the Logoff Tasks for both Advik and Adhrit
+            using (TaskService ts = new TaskService(@"\"))
+            {
+                TaskFolder myFolder = ts.GetFolder("Karthik's Custom Tasks");
+
+                var myTasks = myFolder.Tasks.Where(t => t.Name.Equals("Force Advik's User Logoff", StringComparison.OrdinalIgnoreCase));
+                Microsoft.Win32.TaskScheduler.Task myTask = myTasks.ElementAt(0);
+                myTask.Definition.Triggers.Clear();
+
+                if ( dtMonToTime.ToShortTimeString() == dtTueToTime.ToShortTimeString() &&
+                    dtTueToTime.ToShortTimeString() == dtWedToTime.ToShortTimeString() &&
+                    dtWedToTime.ToShortTimeString() == dtThuToTime.ToShortTimeString() &&
+                    dtThuToTime.ToShortTimeString() == dtFriToTime.ToShortTimeString() )
+                {
+                    WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
+                    myWeekdayTrigger.StartBoundary = dtMonToTime;
+                    myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
+                    myWeekdayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myWeekdayTrigger);
+                }
+                else
+                {
+                    WeeklyTrigger myMondayTrigger = new WeeklyTrigger(DaysOfTheWeek.Monday);
+                    myMondayTrigger.StartBoundary = dtMonToTime;
+                    myMondayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myMondayTrigger);
+
+                    WeeklyTrigger myTuesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Tuesday);
+                    myTuesdayTrigger.StartBoundary = dtTueToTime;
+                    myTuesdayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myTuesdayTrigger);
+
+                    WeeklyTrigger myWednesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Wednesday);
+                    myWednesdayTrigger.StartBoundary = dtWedToTime;
+                    myWednesdayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myWednesdayTrigger);
+
+                    WeeklyTrigger myThursdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Thursday);
+                    myThursdayTrigger.StartBoundary = dtThuToTime;
+                    myThursdayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myThursdayTrigger);
+
+                    WeeklyTrigger myFridayTrigger = new WeeklyTrigger(DaysOfTheWeek.Friday);
+                    myFridayTrigger.StartBoundary = dtFriToTime;
+                    myFridayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myFridayTrigger);
+                }
+
+                if (dtSunToTime.ToShortTimeString() == dtSatToTime.ToShortTimeString())
+                {
+                    WeeklyTrigger myWeekendTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday | DaysOfTheWeek.Sunday);
+                    myWeekendTrigger.StartBoundary = dtSunToTime;
+                    myWeekendTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(myWeekendTrigger);
+                }
+                else
+                {
+                    WeeklyTrigger mySaturdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday);
+                    mySaturdayTrigger.StartBoundary = dtSatToTime;
+                    mySaturdayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(mySaturdayTrigger);
+
+                    WeeklyTrigger mySundayTrigger = new WeeklyTrigger(DaysOfTheWeek.Sunday);
+                    mySundayTrigger.StartBoundary = dtSunToTime;
+                    mySundayTrigger.WeeksInterval = 1;
+                    myTask.Definition.Triggers.Add(mySundayTrigger);
+                }
+                myTask.RegisterChanges();
+            }
 
             if (cmbSunFromTime.SelectedIndex == cv_iSunFromTime &&
                 cmbSunToTime.SelectedIndex == cv_iSunToTime &&

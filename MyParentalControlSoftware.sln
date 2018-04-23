@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyParentalControlSoftware", "MyParentalControlSoftware\MyParentalControlSoftware.csproj", "{6DB947A7-0B5A-4FAF-88DD-EDFE3C0113B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsoleApp", "ConsoleApp1\TestConsoleApp.csproj", "{AB2735D8-8393-4174-AF57-13D581A4677C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6DB947A7-0B5A-4FAF-88DD-EDFE3C0113B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6DB947A7-0B5A-4FAF-88DD-EDFE3C0113B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6DB947A7-0B5A-4FAF-88DD-EDFE3C0113B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB2735D8-8393-4174-AF57-13D581A4677C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB2735D8-8393-4174-AF57-13D581A4677C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB2735D8-8393-4174-AF57-13D581A4677C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB2735D8-8393-4174-AF57-13D581A4677C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

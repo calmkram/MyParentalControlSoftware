@@ -10,11 +10,20 @@ using System.Windows.Forms;
 using System.Management;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
+using TaskScheduler;
 
 namespace MyParentalControlSoftware
 {
     public partial class MainAppWindow : Form
     {
+        private int cv_iSunFromTime = -2, cv_iSunToTime = -2;
+        private int cv_iMonFromTime = -2, cv_iMonToTime = -2;
+        private int cv_iTueFromTime = -2, cv_iTueToTime = -2;
+        private int cv_iWedFromTime = -2, cv_iWedToTime = -2;
+        private int cv_iThuFromTime = -2, cv_iThuToTime = -2;
+        private int cv_iFriFromTime = -2, cv_iFriToTime = -2;
+        private int cv_iSatFromTime = -2, cv_iSatToTime = -2;
+
         public MainAppWindow()
         {
             InitializeComponent();
@@ -80,7 +89,6 @@ namespace MyParentalControlSoftware
                 //grpbxAppAndWebAccess.Visible = true;
 
                 sSelectedUserName = cmbUserList.SelectedItem.ToString();
-                // Testing to see if I can use the WMI API for Windows Parental Controls
                 pctxLocalMachine = new PrincipalContext(ContextType.Machine);
                 usrpSelectedUser = UserPrincipal.FindByIdentity(pctxLocalMachine, IdentityType.SamAccountName, sSelectedUserName);
 
@@ -108,35 +116,47 @@ namespace MyParentalControlSoftware
                     switch (lExtractedTime.DayOfWeek)
                     {
                         case DayOfWeek.Sunday:
-                            cmbSunFromTime.SelectedIndex = cmbSunFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbSunToTime.SelectedIndex = cmbSunToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iSunFromTime = cmbSunFromTime.SelectedIndex = cmbSunFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iSunToTime = cmbSunToTime.SelectedIndex = cmbSunToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Monday:
-                            cmbMonFromTime.SelectedIndex = cmbMonFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbMonToTime.SelectedIndex = cmbMonToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iMonFromTime = cmbMonFromTime.SelectedIndex = cmbMonFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iMonToTime = cmbMonToTime.SelectedIndex = cmbMonToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Tuesday:
-                            cmbTuesFromTime.SelectedIndex = cmbTuesFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbTuesToTime.SelectedIndex = cmbTuesToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iTueFromTime = cmbTuesFromTime.SelectedIndex = cmbTuesFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iTueToTime = cmbTuesToTime.SelectedIndex = cmbTuesToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Wednesday:
-                            cmbWedFromTime.SelectedIndex = cmbWedFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbWedToTime.SelectedIndex = cmbWedToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iWedFromTime = cmbWedFromTime.SelectedIndex = cmbWedFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iWedToTime = cmbWedToTime.SelectedIndex = cmbWedToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Thursday:
-                            cmbThurFromTime.SelectedIndex = cmbThurFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbThurToTime.SelectedIndex = cmbThurToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iThuFromTime = cmbThurFromTime.SelectedIndex = cmbThurFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iThuToTime = cmbThurToTime.SelectedIndex = cmbThurToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Friday:
-                            cmbFriFromTime.SelectedIndex = cmbFriFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbFriToTime.SelectedIndex = cmbFriToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iFriFromTime = cmbFriFromTime.SelectedIndex = cmbFriFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iFriToTime = cmbFriToTime.SelectedIndex = cmbFriToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                         case DayOfWeek.Saturday:
-                            cmbSatFromTime.SelectedIndex = cmbSatFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
-                            cmbSatToTime.SelectedIndex = cmbSatToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
+                            cv_iSatFromTime = cmbSatFromTime.SelectedIndex = cmbSatFromTime.Items.IndexOf(lExtractedTime.BeginTime.ToShortTimeString());
+                            cv_iSatToTime = cmbSatToTime.SelectedIndex = cmbSatToTime.Items.IndexOf(lExtractedTime.EndTime.ToShortTimeString());
                             break;
                     }
                 }
+
+                if(usrpSelectedUser.Enabled == true)
+                {
+                    btnEnableUser.Enabled = false;
+                    btnDisableUser.Enabled = true;
+                }
+                else
+                {
+                    btnEnableUser.Enabled = true;
+                    btnDisableUser.Enabled = false;
+                }
+                btnSave.Enabled = true;
             }
             else
             {
@@ -145,9 +165,170 @@ namespace MyParentalControlSoftware
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void EnableUser_Click(object sender, EventArgs e)
+        {
+            String sSelectedUserName = "";
+            PrincipalContext pctxLocalMachine;
+            UserPrincipal usrpSelectedUser;
+
+            try
+            {
+                sSelectedUserName = cmbUserList.SelectedItem.ToString();
+                pctxLocalMachine = new PrincipalContext(ContextType.Machine);
+                usrpSelectedUser = UserPrincipal.FindByIdentity(pctxLocalMachine, IdentityType.SamAccountName, sSelectedUserName);
+                usrpSelectedUser.Enabled = true;
+
+                usrpSelectedUser.Save();
+                MessageBox.Show(sSelectedUserName + " has been enabled now!");
+                usrpSelectedUser.Dispose();
+                pctxLocalMachine.Dispose();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            btnEnableUser.Enabled = false;
+            btnDisableUser.Enabled = true;
+        }
+
+        private void DisableUser_Click(object sender, EventArgs e)
+        {
+            String sSelectedUserName = "";
+            PrincipalContext pctxLocalMachine;
+            UserPrincipal usrpSelectedUser;
+
+            try
+            { 
+            sSelectedUserName = cmbUserList.SelectedItem.ToString();
+            pctxLocalMachine = new PrincipalContext(ContextType.Machine);
+            usrpSelectedUser = UserPrincipal.FindByIdentity(pctxLocalMachine, IdentityType.SamAccountName, sSelectedUserName);
+            usrpSelectedUser.Enabled = false;
+
+            usrpSelectedUser.Save();
+
+            MessageBox.Show(sSelectedUserName+" has been disabled now!");
+            usrpSelectedUser.Dispose();
+            pctxLocalMachine.Dispose();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            btnEnableUser.Enabled = true;
+            btnDisableUser.Enabled = false;
+        }
+
+        private void Close_Click(object sender, EventArgs e)
         {
             MainAppWindow.ActiveForm.Close();
+        }
+
+        private void Save_Click(object sender, EventArgs e)
+        {
+            DateTime dtFromTime, dtToTime;
+            String sSelectedUserName = "", sFromTime = "1/1/1900 ", sToTime = "1/1/1900 ";
+            LogonTime lSunLogonTime, lMonLogonTime, lTueLogonTime, lWedLogonTime;
+            LogonTime lThuLogonTime, lFriLogonTime, lSatLogonTime;
+            List<LogonTime> lstLogonTimes = new List<LogonTime>();
+            PrincipalContext pctxLocalMachine;
+            UserPrincipal usrpSelectedUser;
+
+            sSelectedUserName = cmbUserList.SelectedItem.ToString();
+            // Testing to see if I can use the WMI API for Windows Parental Controls
+            pctxLocalMachine = new PrincipalContext(ContextType.Machine);
+            usrpSelectedUser = UserPrincipal.FindByIdentity(pctxLocalMachine, IdentityType.SamAccountName, sSelectedUserName);
+
+
+            sFromTime = sFromTime + cmbSunFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbSunToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lSunLogonTime = new LogonTime(System.DayOfWeek.Sunday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lSunLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbMonFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbMonToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lMonLogonTime = new LogonTime(System.DayOfWeek.Monday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lMonLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbTuesFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbTuesToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lTueLogonTime = new LogonTime(System.DayOfWeek.Tuesday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lTueLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbWedFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbWedToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lWedLogonTime = new LogonTime(System.DayOfWeek.Wednesday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lWedLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbThurFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbThurToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lThuLogonTime = new LogonTime(System.DayOfWeek.Thursday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lThuLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbFriFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbFriToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lFriLogonTime = new LogonTime(System.DayOfWeek.Friday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lFriLogonTime);
+
+            sFromTime = "1/1/1900 "; sToTime = "1/1/1900 ";
+            sFromTime = sFromTime + cmbSatFromTime.SelectedItem.ToString();
+            sToTime = sToTime + cmbSatToTime.SelectedItem.ToString();
+            dtFromTime = DateTime.Parse(sFromTime);
+            dtToTime = DateTime.Parse(sToTime);
+            lSatLogonTime = new LogonTime(System.DayOfWeek.Saturday, dtFromTime, dtToTime);
+            lstLogonTimes.Add(lSatLogonTime);
+
+            
+
+            if (cmbSunFromTime.SelectedIndex == cv_iSunFromTime &&
+                cmbSunToTime.SelectedIndex == cv_iSunToTime &&
+                cmbMonFromTime.SelectedIndex == cv_iMonFromTime &&
+                cmbMonToTime.SelectedIndex == cv_iMonToTime &&
+                cmbTuesFromTime.SelectedIndex == cv_iTueFromTime &&
+                cmbTuesToTime.SelectedIndex == cv_iTueToTime &&
+                cmbWedFromTime.SelectedIndex == cv_iWedFromTime &&
+                cmbWedToTime.SelectedIndex == cv_iWedToTime &&
+                cmbThurFromTime.SelectedIndex == cv_iThuFromTime &&
+                cmbThurToTime.SelectedIndex == cv_iThuToTime &&
+                cmbFriFromTime.SelectedIndex == cv_iFriFromTime &&
+                cmbFriToTime.SelectedIndex == cv_iFriToTime &&
+                cmbSatFromTime.SelectedIndex == cv_iSatFromTime &&
+                cmbSatToTime.SelectedIndex == cv_iSatToTime)
+            {
+                MessageBox.Show("No changes made that need to be saved!");
+                btnSave.Enabled = false;
+            }
+            else
+            {
+                byte[] byteMaskForUser;
+
+                byteMaskForUser = PermittedLogonTimes.GetByteMask(lstLogonTimes);
+                usrpSelectedUser.PermittedLogonTimes = byteMaskForUser;
+                usrpSelectedUser.Save();
+
+                MessageBox.Show("Successfully saved user time limit changes for " + usrpSelectedUser.Name + "!");
+
+                usrpSelectedUser.Dispose();
+                pctxLocalMachine.Dispose();
+
+                btnSave.Enabled = false;
+            }
         }
     }
 }

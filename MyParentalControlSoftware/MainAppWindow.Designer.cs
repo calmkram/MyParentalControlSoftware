@@ -31,6 +31,13 @@
             this.cmbUserList = new System.Windows.Forms.ComboBox();
             this.lblSelectUser = new System.Windows.Forms.Label();
             this.grpbxTimeRestrictions = new System.Windows.Forms.GroupBox();
+            this.btnDisableUser = new System.Windows.Forms.Button();
+            this.btnEnableUser = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.cmbSatToTime = new System.Windows.Forms.ComboBox();
             this.cmbSatFromTime = new System.Windows.Forms.ComboBox();
             this.cmbFriToTime = new System.Windows.Forms.ComboBox();
@@ -56,11 +63,7 @@
             this.grpbxAppAndWebAccess = new System.Windows.Forms.GroupBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.grpbxTimeRestrictions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,11 +88,13 @@
             // 
             // grpbxTimeRestrictions
             // 
+            this.grpbxTimeRestrictions.Controls.Add(this.btnDisableUser);
+            this.grpbxTimeRestrictions.Controls.Add(this.btnEnableUser);
             this.grpbxTimeRestrictions.Controls.Add(this.label5);
             this.grpbxTimeRestrictions.Controls.Add(this.label4);
             this.grpbxTimeRestrictions.Controls.Add(this.label3);
             this.grpbxTimeRestrictions.Controls.Add(this.label2);
-            this.grpbxTimeRestrictions.Controls.Add(this.button1);
+            this.grpbxTimeRestrictions.Controls.Add(this.btnSave);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbSatToTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbSatFromTime);
             this.grpbxTimeRestrictions.Controls.Add(this.cmbFriToTime);
@@ -113,11 +118,79 @@
             this.grpbxTimeRestrictions.Controls.Add(this.lblSunday);
             this.grpbxTimeRestrictions.Location = new System.Drawing.Point(15, 85);
             this.grpbxTimeRestrictions.Name = "grpbxTimeRestrictions";
-            this.grpbxTimeRestrictions.Size = new System.Drawing.Size(276, 296);
+            this.grpbxTimeRestrictions.Size = new System.Drawing.Size(276, 309);
             this.grpbxTimeRestrictions.TabIndex = 2;
             this.grpbxTimeRestrictions.TabStop = false;
             this.grpbxTimeRestrictions.Text = "User Time Restrictions";
             this.grpbxTimeRestrictions.Visible = false;
+            // 
+            // btnDisableUser
+            // 
+            this.btnDisableUser.Location = new System.Drawing.Point(171, 271);
+            this.btnDisableUser.Name = "btnDisableUser";
+            this.btnDisableUser.Size = new System.Drawing.Size(75, 23);
+            this.btnDisableUser.TabIndex = 27;
+            this.btnDisableUser.Text = "Disable User";
+            this.btnDisableUser.UseVisualStyleBackColor = true;
+            this.btnDisableUser.Click += new System.EventHandler(this.DisableUser_Click);
+            // 
+            // btnEnableUser
+            // 
+            this.btnEnableUser.Location = new System.Drawing.Point(171, 241);
+            this.btnEnableUser.Name = "btnEnableUser";
+            this.btnEnableUser.Size = new System.Drawing.Size(75, 23);
+            this.btnEnableUser.TabIndex = 26;
+            this.btnEnableUser.Text = "Enable User";
+            this.btnEnableUser.UseVisualStyleBackColor = true;
+            this.btnEnableUser.Click += new System.EventHandler(this.EnableUser_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Day:";
+            // 
+            // label4
+            // 
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label4.Location = new System.Drawing.Point(23, 37);
+            this.label4.MaximumSize = new System.Drawing.Size(500, 2);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(233, 1);
+            this.label4.TabIndex = 24;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(206, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "To:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(116, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "From:";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(23, 241);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(94, 23);
+            this.btnSave.TabIndex = 21;
+            this.btnSave.Text = "Save Changes";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.Save_Click);
             // 
             // cmbSatToTime
             // 
@@ -313,9 +386,9 @@
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.MaximumSize = new System.Drawing.Size(625, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(615, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(623, 26);
+            this.label1.Size = new System.Drawing.Size(615, 26);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welcome to My Parental Control Software! This custom software allows me to automa" +
     "tically set/change time limits and application / website access for this compute" +
@@ -325,7 +398,7 @@
             // 
             this.grpbxAppAndWebAccess.Location = new System.Drawing.Point(297, 85);
             this.grpbxAppAndWebAccess.Name = "grpbxAppAndWebAccess";
-            this.grpbxAppAndWebAccess.Size = new System.Drawing.Size(320, 296);
+            this.grpbxAppAndWebAccess.Size = new System.Drawing.Size(320, 309);
             this.grpbxAppAndWebAccess.TabIndex = 4;
             this.grpbxAppAndWebAccess.TabStop = false;
             this.grpbxAppAndWebAccess.Text = "User Application and Website Access Restrictions";
@@ -349,60 +422,22 @@
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose.Click += new System.EventHandler(this.Close_Click);
             // 
-            // button1
+            // textBox1
             // 
-            this.button1.Location = new System.Drawing.Point(92, 257);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 23);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Save Changes";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "From:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
-            this.label3.TabIndex = 23;
-            this.label3.Text = "To:";
-            // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(23, 37);
-            this.label4.MaximumSize = new System.Drawing.Size(500, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 1);
-            this.label4.TabIndex = 24;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "Day:";
+            this.textBox1.Location = new System.Drawing.Point(15, 400);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(602, 40);
+            this.textBox1.TabIndex = 0;
             // 
             // MainAppWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(643, 393);
+            this.ClientSize = new System.Drawing.Size(632, 488);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.grpbxAppAndWebAccess);
@@ -449,11 +484,14 @@
         private System.Windows.Forms.ComboBox cmbMonFromTime;
         private System.Windows.Forms.ComboBox cmbSunToTime;
         private System.Windows.Forms.ComboBox cmbSunFromTime;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnDisableUser;
+        private System.Windows.Forms.Button btnEnableUser;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

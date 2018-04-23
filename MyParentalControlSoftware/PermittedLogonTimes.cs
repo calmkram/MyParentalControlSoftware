@@ -104,7 +104,7 @@ namespace MyParentalControlSoftware
                     {
                         index = hours.Count() + index;
                     }
-                    else if (index > hours.Count())
+                    else if (index >= hours.Count())
                     {
                         index = index - hours.Count();
                     }
@@ -265,7 +265,7 @@ namespace MyParentalControlSoftware
             {
                 var index = i + (-1) * offset;
 
-                // shifts over begging, loop back to the end
+                // shifts over beginning, loop back to the end
                 if (index < 0)
                 {
                     index = hours.Length + index;
@@ -283,6 +283,9 @@ namespace MyParentalControlSoftware
                 else if (begin.HasValue && !hours[index])
                 {
                     end = CalculateHour(index, offset);
+
+                    // if end is negative, then no end time was found, move on
+                    if (end < 0) continue;
 
                     // save the day
                     ltimes.Add(new LogonTime(CalculateDay(index, offset), new DateTime(2011, 1, 1, begin.Value, 0, 0), new DateTime(2011, 1, 1, end.Value, 0, 0)));

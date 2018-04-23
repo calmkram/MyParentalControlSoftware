@@ -62,7 +62,8 @@ namespace MyParentalControlSoftware
 
         private void ValidateTimes()
         {
-            if (EndTime.Hour < BeginTime.Hour)
+            if ( (EndTime.Hour < BeginTime.Hour) && 
+                (EndTime.Hour != 0))
             {
                 throw new ArgumentException("Begin time cannot be after End time.");
             }

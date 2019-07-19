@@ -396,69 +396,72 @@ namespace MyParentalControlSoftware
             {
                 TaskFolder myFolder = ts.GetFolder("Karthik's Custom Tasks");
 
-                var myTasks = myFolder.Tasks.Where(t => t.Name.Equals(sSelectedUserName+" Force Logoff", StringComparison.OrdinalIgnoreCase));
-                Microsoft.Win32.TaskScheduler.Task myTask = myTasks.ElementAt(0);
-                myTask.Definition.Triggers.Clear();
-
-                if ( dtMonToTime.ToShortTimeString() == dtTueToTime.ToShortTimeString() &&
-                    dtTueToTime.ToShortTimeString() == dtWedToTime.ToShortTimeString() &&
-                    dtWedToTime.ToShortTimeString() == dtThuToTime.ToShortTimeString() &&
-                    dtThuToTime.ToShortTimeString() == dtFriToTime.ToShortTimeString() )
+                if (myFolder.Tasks.Count > 0)
                 {
-                    WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
-                    myWeekdayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
-                    myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
-                    myWeekdayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myWeekdayTrigger);
+                    var myTasks = myFolder.Tasks.Where(t => t.Name.Equals(sSelectedUserName + " Force Logoff", StringComparison.OrdinalIgnoreCase));
+                    Microsoft.Win32.TaskScheduler.Task myTask = myTasks.ElementAt(0);
+                    myTask.Definition.Triggers.Clear();
+
+                    if (dtMonToTime.ToShortTimeString() == dtTueToTime.ToShortTimeString() &&
+                        dtTueToTime.ToShortTimeString() == dtWedToTime.ToShortTimeString() &&
+                        dtWedToTime.ToShortTimeString() == dtThuToTime.ToShortTimeString() &&
+                        dtThuToTime.ToShortTimeString() == dtFriToTime.ToShortTimeString())
+                    {
+                        WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
+                        myWeekdayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
+                        myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
+                        myWeekdayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myWeekdayTrigger);
+                    }
+                    else
+                    {
+                        WeeklyTrigger myMondayTrigger = new WeeklyTrigger(DaysOfTheWeek.Monday);
+                        myMondayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
+                        myMondayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myMondayTrigger);
+
+                        WeeklyTrigger myTuesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Tuesday);
+                        myTuesdayTrigger.StartBoundary = dtTueToTime.AddSeconds(-30);
+                        myTuesdayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myTuesdayTrigger);
+
+                        WeeklyTrigger myWednesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Wednesday);
+                        myWednesdayTrigger.StartBoundary = dtWedToTime.AddSeconds(-30);
+                        myWednesdayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myWednesdayTrigger);
+
+                        WeeklyTrigger myThursdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Thursday);
+                        myThursdayTrigger.StartBoundary = dtThuToTime.AddSeconds(-30);
+                        myThursdayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myThursdayTrigger);
+
+                        WeeklyTrigger myFridayTrigger = new WeeklyTrigger(DaysOfTheWeek.Friday);
+                        myFridayTrigger.StartBoundary = dtFriToTime.AddSeconds(-30);
+                        myFridayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myFridayTrigger);
+                    }
+
+                    if (dtSunToTime.ToShortTimeString() == dtSatToTime.ToShortTimeString())
+                    {
+                        WeeklyTrigger myWeekendTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday | DaysOfTheWeek.Sunday);
+                        myWeekendTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
+                        myWeekendTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(myWeekendTrigger);
+                    }
+                    else
+                    {
+                        WeeklyTrigger mySaturdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday);
+                        mySaturdayTrigger.StartBoundary = dtSatToTime.AddSeconds(-30);
+                        mySaturdayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(mySaturdayTrigger);
+
+                        WeeklyTrigger mySundayTrigger = new WeeklyTrigger(DaysOfTheWeek.Sunday);
+                        mySundayTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
+                        mySundayTrigger.WeeksInterval = 1;
+                        myTask.Definition.Triggers.Add(mySundayTrigger);
+                    }
+                    myTask.RegisterChanges();
                 }
-                else
-                {
-                    WeeklyTrigger myMondayTrigger = new WeeklyTrigger(DaysOfTheWeek.Monday);
-                    myMondayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
-                    myMondayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myMondayTrigger);
-
-                    WeeklyTrigger myTuesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Tuesday);
-                    myTuesdayTrigger.StartBoundary = dtTueToTime.AddSeconds(-30);
-                    myTuesdayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myTuesdayTrigger);
-
-                    WeeklyTrigger myWednesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Wednesday);
-                    myWednesdayTrigger.StartBoundary = dtWedToTime.AddSeconds(-30);
-                    myWednesdayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myWednesdayTrigger);
-
-                    WeeklyTrigger myThursdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Thursday);
-                    myThursdayTrigger.StartBoundary = dtThuToTime.AddSeconds(-30);
-                    myThursdayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myThursdayTrigger);
-
-                    WeeklyTrigger myFridayTrigger = new WeeklyTrigger(DaysOfTheWeek.Friday);
-                    myFridayTrigger.StartBoundary = dtFriToTime.AddSeconds(-30);
-                    myFridayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myFridayTrigger);
-                }
-
-                if (dtSunToTime.ToShortTimeString() == dtSatToTime.ToShortTimeString())
-                {
-                    WeeklyTrigger myWeekendTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday | DaysOfTheWeek.Sunday);
-                    myWeekendTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
-                    myWeekendTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(myWeekendTrigger);
-                }
-                else
-                {
-                    WeeklyTrigger mySaturdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday);
-                    mySaturdayTrigger.StartBoundary = dtSatToTime.AddSeconds(-30);
-                    mySaturdayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(mySaturdayTrigger);
-
-                    WeeklyTrigger mySundayTrigger = new WeeklyTrigger(DaysOfTheWeek.Sunday);
-                    mySundayTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
-                    mySundayTrigger.WeeksInterval = 1;
-                    myTask.Definition.Triggers.Add(mySundayTrigger);
-                }
-                myTask.RegisterChanges();
             }
 
             if (cmbSunFromTime.SelectedIndex == cv_iSunFromTime &&

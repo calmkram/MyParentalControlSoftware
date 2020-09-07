@@ -199,6 +199,7 @@
             this.cmbSatToTime.Name = "cmbSatToTime";
             this.cmbSatToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbSatToTime.TabIndex = 20;
+            this.cmbSatToTime.SelectedIndexChanged += new System.EventHandler(this.cmbSatToTime_SelectedIndexChanged);
             // 
             // cmbSatFromTime
             // 
@@ -208,6 +209,7 @@
             this.cmbSatFromTime.Name = "cmbSatFromTime";
             this.cmbSatFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbSatFromTime.TabIndex = 19;
+            this.cmbSatFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbSatFromTime_SelectedIndexChanged);
             // 
             // cmbFriToTime
             // 
@@ -217,6 +219,7 @@
             this.cmbFriToTime.Name = "cmbFriToTime";
             this.cmbFriToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbFriToTime.TabIndex = 18;
+            this.cmbFriToTime.SelectedIndexChanged += new System.EventHandler(this.cmbFriToTime_SelectedIndexChanged);
             // 
             // cmbFriFromTime
             // 
@@ -226,6 +229,7 @@
             this.cmbFriFromTime.Name = "cmbFriFromTime";
             this.cmbFriFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbFriFromTime.TabIndex = 17;
+            this.cmbFriFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbFriFromTime_SelectedIndexChanged);
             // 
             // cmbThuToTime
             // 
@@ -235,6 +239,7 @@
             this.cmbThuToTime.Name = "cmbThuToTime";
             this.cmbThuToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbThuToTime.TabIndex = 16;
+            this.cmbThuToTime.SelectedIndexChanged += new System.EventHandler(this.cmbThuToTime_SelectedIndexChanged);
             // 
             // cmbThuFromTime
             // 
@@ -244,6 +249,7 @@
             this.cmbThuFromTime.Name = "cmbThuFromTime";
             this.cmbThuFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbThuFromTime.TabIndex = 15;
+            this.cmbThuFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbThuFromTime_SelectedIndexChanged);
             // 
             // cmbWedToTime
             // 
@@ -253,6 +259,7 @@
             this.cmbWedToTime.Name = "cmbWedToTime";
             this.cmbWedToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbWedToTime.TabIndex = 14;
+            this.cmbWedToTime.SelectedIndexChanged += new System.EventHandler(this.cmbWedToTime_SelectedIndexChanged);
             // 
             // cmbWedFromTime
             // 
@@ -262,6 +269,7 @@
             this.cmbWedFromTime.Name = "cmbWedFromTime";
             this.cmbWedFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbWedFromTime.TabIndex = 13;
+            this.cmbWedFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbWedFromTime_SelectedIndexChanged);
             // 
             // cmbTueToTime
             // 
@@ -271,6 +279,7 @@
             this.cmbTueToTime.Name = "cmbTueToTime";
             this.cmbTueToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbTueToTime.TabIndex = 12;
+            this.cmbTueToTime.SelectedIndexChanged += new System.EventHandler(this.cmbTueToTime_SelectedIndexChanged);
             // 
             // cmbTueFromTime
             // 
@@ -280,6 +289,7 @@
             this.cmbTueFromTime.Name = "cmbTueFromTime";
             this.cmbTueFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbTueFromTime.TabIndex = 11;
+            this.cmbTueFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbTueFromTime_SelectedIndexChanged);
             // 
             // cmbMonToTime
             // 
@@ -289,6 +299,7 @@
             this.cmbMonToTime.Name = "cmbMonToTime";
             this.cmbMonToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbMonToTime.TabIndex = 10;
+            this.cmbMonToTime.SelectedIndexChanged += new System.EventHandler(this.cmbMonToTime_SelectedIndexChanged);
             // 
             // cmbMonFromTime
             // 
@@ -298,6 +309,7 @@
             this.cmbMonFromTime.Name = "cmbMonFromTime";
             this.cmbMonFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbMonFromTime.TabIndex = 9;
+            this.cmbMonFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbMonFromTime_SelectedIndexChanged);
             // 
             // cmbSunToTime
             // 
@@ -307,6 +319,7 @@
             this.cmbSunToTime.Name = "cmbSunToTime";
             this.cmbSunToTime.Size = new System.Drawing.Size(75, 21);
             this.cmbSunToTime.TabIndex = 8;
+            this.cmbSunToTime.SelectedIndexChanged += new System.EventHandler(this.cmbSunToTime_SelectedIndexChanged);
             // 
             // cmbSunFromTime
             // 
@@ -316,6 +329,7 @@
             this.cmbSunFromTime.Name = "cmbSunFromTime";
             this.cmbSunFromTime.Size = new System.Drawing.Size(75, 21);
             this.cmbSunFromTime.TabIndex = 7;
+            this.cmbSunFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbSunFromTime_SelectedIndexChanged);
             // 
             // lblSaturday
             // 

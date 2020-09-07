@@ -24,6 +24,76 @@ namespace MyParentalControlSoftware
         private int cv_iFriFromTime = -2, cv_iFriToTime = -2;
         private int cv_iSatFromTime = -2, cv_iSatToTime = -2;
 
+        private void cmbSunToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbMonFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbMonToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbTueFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbTueToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbWedFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbWedToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbThuFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbThuToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbFriFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbFriToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbSatFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbSatToTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
+        private void cmbSunFromTime_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnSave.Enabled = true;
+        }
+
         public MainAppWindow()
         {
             InitializeComponent();

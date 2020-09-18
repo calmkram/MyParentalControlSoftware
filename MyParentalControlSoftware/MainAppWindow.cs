@@ -477,57 +477,75 @@ namespace MyParentalControlSoftware
                         dtWedToTime.ToShortTimeString() == dtThuToTime.ToShortTimeString() &&
                         dtThuToTime.ToShortTimeString() == dtFriToTime.ToShortTimeString())
                     {
-                        WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
-                        myWeekdayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
-                        myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
-                        myWeekdayTrigger.WeeksInterval = 1;
+                        var myWeekdayTrigger = new WeeklyTrigger
+                        {
+                            StartBoundary = dtMonToTime.AddSeconds(-30),
+                            DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday,
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myWeekdayTrigger);
                     }
                     else
                     {
-                        WeeklyTrigger myMondayTrigger = new WeeklyTrigger(DaysOfTheWeek.Monday);
-                        myMondayTrigger.StartBoundary = dtMonToTime.AddSeconds(-30);
-                        myMondayTrigger.WeeksInterval = 1;
+                        var myMondayTrigger = new WeeklyTrigger(DaysOfTheWeek.Monday)
+                        {
+                            StartBoundary = dtMonToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myMondayTrigger);
 
-                        WeeklyTrigger myTuesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Tuesday);
-                        myTuesdayTrigger.StartBoundary = dtTueToTime.AddSeconds(-30);
-                        myTuesdayTrigger.WeeksInterval = 1;
+                        var myTuesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Tuesday)
+                        {
+                            StartBoundary = dtTueToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myTuesdayTrigger);
 
-                        WeeklyTrigger myWednesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Wednesday);
-                        myWednesdayTrigger.StartBoundary = dtWedToTime.AddSeconds(-30);
-                        myWednesdayTrigger.WeeksInterval = 1;
+                        var myWednesdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Wednesday)
+                        {
+                            StartBoundary = dtWedToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myWednesdayTrigger);
 
-                        WeeklyTrigger myThursdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Thursday);
-                        myThursdayTrigger.StartBoundary = dtThuToTime.AddSeconds(-30);
-                        myThursdayTrigger.WeeksInterval = 1;
+                        var myThursdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Thursday)
+                        {
+                            StartBoundary = dtThuToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myThursdayTrigger);
 
-                        WeeklyTrigger myFridayTrigger = new WeeklyTrigger(DaysOfTheWeek.Friday);
-                        myFridayTrigger.StartBoundary = dtFriToTime.AddSeconds(-30);
-                        myFridayTrigger.WeeksInterval = 1;
+                        var myFridayTrigger = new WeeklyTrigger(DaysOfTheWeek.Friday)
+                        {
+                            StartBoundary = dtFriToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myFridayTrigger);
                     }
 
                     if (dtSunToTime.ToShortTimeString() == dtSatToTime.ToShortTimeString())
                     {
-                        WeeklyTrigger myWeekendTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday | DaysOfTheWeek.Sunday);
-                        myWeekendTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
-                        myWeekendTrigger.WeeksInterval = 1;
+                        var myWeekendTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday | DaysOfTheWeek.Sunday)
+                        {
+                            StartBoundary = dtSunToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(myWeekendTrigger);
                     }
                     else
                     {
-                        WeeklyTrigger mySaturdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday);
-                        mySaturdayTrigger.StartBoundary = dtSatToTime.AddSeconds(-30);
-                        mySaturdayTrigger.WeeksInterval = 1;
+                        var mySaturdayTrigger = new WeeklyTrigger(DaysOfTheWeek.Saturday)
+                        {
+                            StartBoundary = dtSatToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(mySaturdayTrigger);
 
-                        WeeklyTrigger mySundayTrigger = new WeeklyTrigger(DaysOfTheWeek.Sunday);
-                        mySundayTrigger.StartBoundary = dtSunToTime.AddSeconds(-30);
-                        mySundayTrigger.WeeksInterval = 1;
+                        var mySundayTrigger = new WeeklyTrigger(DaysOfTheWeek.Sunday)
+                        {
+                            StartBoundary = dtSunToTime.AddSeconds(-30),
+                            WeeksInterval = 1
+                        };
                         myTask.Definition.Triggers.Add(mySundayTrigger);
                     }
                     myTask.RegisterChanges();
@@ -556,6 +574,7 @@ namespace MyParentalControlSoftware
             {
                 byte[] byteMaskForUser;
 
+                // Saving Permitted Logon Times based on selection
                 byteMaskForUser = PermittedLogonTimes.GetByteMask(lstLogonTimes);
                 usrpSelectedUser.PermittedLogonTimes = byteMaskForUser;
                 usrpSelectedUser.Save();

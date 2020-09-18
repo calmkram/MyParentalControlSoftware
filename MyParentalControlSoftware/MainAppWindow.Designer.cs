@@ -63,6 +63,8 @@
             this.grpbxAppAndWebAccess = new System.Windows.Forms.GroupBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbComputerList = new System.Windows.Forms.ComboBox();
             this.grpbxTimeRestrictions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +72,7 @@
             // 
             this.cmbUserList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserList.FormattingEnabled = true;
-            this.cmbUserList.Location = new System.Drawing.Point(112, 47);
+            this.cmbUserList.Location = new System.Drawing.Point(112, 77);
             this.cmbUserList.Name = "cmbUserList";
             this.cmbUserList.Size = new System.Drawing.Size(198, 21);
             this.cmbUserList.TabIndex = 0;
@@ -79,7 +81,7 @@
             // lblSelectUser
             // 
             this.lblSelectUser.AutoSize = true;
-            this.lblSelectUser.Location = new System.Drawing.Point(12, 50);
+            this.lblSelectUser.Location = new System.Drawing.Point(16, 80);
             this.lblSelectUser.Name = "lblSelectUser";
             this.lblSelectUser.Size = new System.Drawing.Size(65, 13);
             this.lblSelectUser.TabIndex = 1;
@@ -115,7 +117,7 @@
             this.grpbxTimeRestrictions.Controls.Add(this.lblTuesday);
             this.grpbxTimeRestrictions.Controls.Add(this.lblMonday);
             this.grpbxTimeRestrictions.Controls.Add(this.lblSunday);
-            this.grpbxTimeRestrictions.Location = new System.Drawing.Point(15, 85);
+            this.grpbxTimeRestrictions.Location = new System.Drawing.Point(15, 115);
             this.grpbxTimeRestrictions.Name = "grpbxTimeRestrictions";
             this.grpbxTimeRestrictions.Size = new System.Drawing.Size(276, 309);
             this.grpbxTimeRestrictions.TabIndex = 2;
@@ -409,7 +411,7 @@
             // 
             // grpbxAppAndWebAccess
             // 
-            this.grpbxAppAndWebAccess.Location = new System.Drawing.Point(297, 85);
+            this.grpbxAppAndWebAccess.Location = new System.Drawing.Point(297, 115);
             this.grpbxAppAndWebAccess.Name = "grpbxAppAndWebAccess";
             this.grpbxAppAndWebAccess.Size = new System.Drawing.Size(320, 309);
             this.grpbxAppAndWebAccess.TabIndex = 4;
@@ -420,7 +422,7 @@
             // btnApply
             // 
             this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(340, 45);
+            this.btnApply.Location = new System.Drawing.Point(357, 61);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(75, 23);
             this.btnApply.TabIndex = 5;
@@ -429,7 +431,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(421, 45);
+            this.btnClose.Location = new System.Drawing.Point(438, 61);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 6;
@@ -437,11 +439,31 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.Close_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 52);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Select Computer:";
+            // 
+            // cmbComputerList
+            // 
+            this.cmbComputerList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbComputerList.FormattingEnabled = true;
+            this.cmbComputerList.Location = new System.Drawing.Point(112, 49);
+            this.cmbComputerList.Name = "cmbComputerList";
+            this.cmbComputerList.Size = new System.Drawing.Size(198, 21);
+            this.cmbComputerList.TabIndex = 8;
+            // 
             // MainAppWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 401);
+            this.ClientSize = new System.Drawing.Size(632, 432);
+            this.Controls.Add(this.cmbComputerList);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.grpbxAppAndWebAccess);
@@ -495,6 +517,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnDisableUser;
         private System.Windows.Forms.Button btnEnableUser;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cmbComputerList;
     }
 }
 

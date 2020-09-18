@@ -71,10 +71,12 @@ namespace ConsoleApp1
                 var myTasks = myFolder.Tasks.Where(t => t.Name.Equals("Force Advik's User Logoff", StringComparison.OrdinalIgnoreCase));
                 Microsoft.Win32.TaskScheduler.Task myTask = myTasks.ElementAt(0);
                 myTask.Definition.Triggers.Clear();
-                WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger();
-                myWeekdayTrigger.StartBoundary = DateTime.Parse("4:59:30 PM");
-                myWeekdayTrigger.DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday;
-                myWeekdayTrigger.WeeksInterval = 1;
+                WeeklyTrigger myWeekdayTrigger = new WeeklyTrigger
+                {
+                    StartBoundary = DateTime.Parse("4:59:30 PM"),
+                    DaysOfWeek = DaysOfTheWeek.Monday | DaysOfTheWeek.Tuesday | DaysOfTheWeek.Wednesday | DaysOfTheWeek.Thursday | DaysOfTheWeek.Friday,
+                    WeeksInterval = 1
+                };
                 myTask.Definition.Triggers.Add(myWeekdayTrigger);
 
                 myTask.RegisterChanges();

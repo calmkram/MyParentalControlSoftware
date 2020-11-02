@@ -65,6 +65,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.cmbComputerList = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.grpbxTimeRestrictions.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,18 +73,20 @@
             // 
             this.cmbUserList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbUserList.FormattingEnabled = true;
-            this.cmbUserList.Location = new System.Drawing.Point(112, 77);
+            this.cmbUserList.Location = new System.Drawing.Point(149, 95);
+            this.cmbUserList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbUserList.Name = "cmbUserList";
-            this.cmbUserList.Size = new System.Drawing.Size(198, 21);
+            this.cmbUserList.Size = new System.Drawing.Size(263, 24);
             this.cmbUserList.TabIndex = 0;
             this.cmbUserList.TextChanged += new System.EventHandler(this.UserList_TextChanged);
             // 
             // lblSelectUser
             // 
             this.lblSelectUser.AutoSize = true;
-            this.lblSelectUser.Location = new System.Drawing.Point(16, 80);
+            this.lblSelectUser.Location = new System.Drawing.Point(21, 98);
+            this.lblSelectUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSelectUser.Name = "lblSelectUser";
-            this.lblSelectUser.Size = new System.Drawing.Size(65, 13);
+            this.lblSelectUser.Size = new System.Drawing.Size(85, 17);
             this.lblSelectUser.TabIndex = 1;
             this.lblSelectUser.Text = "Select User:";
             // 
@@ -117,9 +120,11 @@
             this.grpbxTimeRestrictions.Controls.Add(this.lblTuesday);
             this.grpbxTimeRestrictions.Controls.Add(this.lblMonday);
             this.grpbxTimeRestrictions.Controls.Add(this.lblSunday);
-            this.grpbxTimeRestrictions.Location = new System.Drawing.Point(15, 115);
+            this.grpbxTimeRestrictions.Location = new System.Drawing.Point(20, 142);
+            this.grpbxTimeRestrictions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpbxTimeRestrictions.Name = "grpbxTimeRestrictions";
-            this.grpbxTimeRestrictions.Size = new System.Drawing.Size(276, 309);
+            this.grpbxTimeRestrictions.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbxTimeRestrictions.Size = new System.Drawing.Size(368, 380);
             this.grpbxTimeRestrictions.TabIndex = 2;
             this.grpbxTimeRestrictions.TabStop = false;
             this.grpbxTimeRestrictions.Text = "User Time Restrictions";
@@ -127,9 +132,10 @@
             // 
             // btnDisableUser
             // 
-            this.btnDisableUser.Location = new System.Drawing.Point(171, 271);
+            this.btnDisableUser.Location = new System.Drawing.Point(228, 334);
+            this.btnDisableUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDisableUser.Name = "btnDisableUser";
-            this.btnDisableUser.Size = new System.Drawing.Size(75, 23);
+            this.btnDisableUser.Size = new System.Drawing.Size(100, 28);
             this.btnDisableUser.TabIndex = 27;
             this.btnDisableUser.Text = "Disable User";
             this.btnDisableUser.UseVisualStyleBackColor = true;
@@ -137,9 +143,10 @@
             // 
             // btnEnableUser
             // 
-            this.btnEnableUser.Location = new System.Drawing.Point(171, 241);
+            this.btnEnableUser.Location = new System.Drawing.Point(228, 297);
+            this.btnEnableUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEnableUser.Name = "btnEnableUser";
-            this.btnEnableUser.Size = new System.Drawing.Size(75, 23);
+            this.btnEnableUser.Size = new System.Drawing.Size(100, 28);
             this.btnEnableUser.TabIndex = 26;
             this.btnEnableUser.Text = "Enable User";
             this.btnEnableUser.UseVisualStyleBackColor = true;
@@ -148,9 +155,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 20);
+            this.label5.Location = new System.Drawing.Point(28, 25);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(29, 13);
+            this.label5.Size = new System.Drawing.Size(37, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Day:";
             // 
@@ -159,35 +167,39 @@
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label4.Location = new System.Drawing.Point(23, 37);
-            this.label4.MaximumSize = new System.Drawing.Size(500, 2);
+            this.label4.Location = new System.Drawing.Point(31, 46);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.MaximumSize = new System.Drawing.Size(666, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(233, 1);
+            this.label4.Size = new System.Drawing.Size(310, 1);
             this.label4.TabIndex = 24;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 20);
+            this.label3.Location = new System.Drawing.Point(275, 25);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(23, 13);
+            this.label3.Size = new System.Drawing.Size(29, 17);
             this.label3.TabIndex = 23;
             this.label3.Text = "To:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 20);
+            this.label2.Location = new System.Drawing.Point(155, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 22;
             this.label2.Text = "From:";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(23, 241);
+            this.btnSave.Location = new System.Drawing.Point(31, 297);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(94, 23);
+            this.btnSave.Size = new System.Drawing.Size(125, 28);
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save Changes";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -197,9 +209,10 @@
             // 
             this.cmbSatToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSatToTime.FormattingEnabled = true;
-            this.cmbSatToTime.Location = new System.Drawing.Point(181, 199);
+            this.cmbSatToTime.Location = new System.Drawing.Point(241, 245);
+            this.cmbSatToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSatToTime.Name = "cmbSatToTime";
-            this.cmbSatToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbSatToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbSatToTime.TabIndex = 20;
             this.cmbSatToTime.SelectedIndexChanged += new System.EventHandler(this.cmbSatToTime_SelectedIndexChanged);
             // 
@@ -207,9 +220,10 @@
             // 
             this.cmbSatFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSatFromTime.FormattingEnabled = true;
-            this.cmbSatFromTime.Location = new System.Drawing.Point(95, 199);
+            this.cmbSatFromTime.Location = new System.Drawing.Point(127, 245);
+            this.cmbSatFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSatFromTime.Name = "cmbSatFromTime";
-            this.cmbSatFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbSatFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbSatFromTime.TabIndex = 19;
             this.cmbSatFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbSatFromTime_SelectedIndexChanged);
             // 
@@ -217,9 +231,10 @@
             // 
             this.cmbFriToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFriToTime.FormattingEnabled = true;
-            this.cmbFriToTime.Location = new System.Drawing.Point(181, 173);
+            this.cmbFriToTime.Location = new System.Drawing.Point(241, 213);
+            this.cmbFriToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbFriToTime.Name = "cmbFriToTime";
-            this.cmbFriToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbFriToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbFriToTime.TabIndex = 18;
             this.cmbFriToTime.SelectedIndexChanged += new System.EventHandler(this.cmbFriToTime_SelectedIndexChanged);
             // 
@@ -227,9 +242,10 @@
             // 
             this.cmbFriFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFriFromTime.FormattingEnabled = true;
-            this.cmbFriFromTime.Location = new System.Drawing.Point(95, 173);
+            this.cmbFriFromTime.Location = new System.Drawing.Point(127, 213);
+            this.cmbFriFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbFriFromTime.Name = "cmbFriFromTime";
-            this.cmbFriFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbFriFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbFriFromTime.TabIndex = 17;
             this.cmbFriFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbFriFromTime_SelectedIndexChanged);
             // 
@@ -237,9 +253,10 @@
             // 
             this.cmbThuToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbThuToTime.FormattingEnabled = true;
-            this.cmbThuToTime.Location = new System.Drawing.Point(181, 147);
+            this.cmbThuToTime.Location = new System.Drawing.Point(241, 181);
+            this.cmbThuToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbThuToTime.Name = "cmbThuToTime";
-            this.cmbThuToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbThuToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbThuToTime.TabIndex = 16;
             this.cmbThuToTime.SelectedIndexChanged += new System.EventHandler(this.cmbThuToTime_SelectedIndexChanged);
             // 
@@ -247,9 +264,10 @@
             // 
             this.cmbThuFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbThuFromTime.FormattingEnabled = true;
-            this.cmbThuFromTime.Location = new System.Drawing.Point(95, 147);
+            this.cmbThuFromTime.Location = new System.Drawing.Point(127, 181);
+            this.cmbThuFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbThuFromTime.Name = "cmbThuFromTime";
-            this.cmbThuFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbThuFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbThuFromTime.TabIndex = 15;
             this.cmbThuFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbThuFromTime_SelectedIndexChanged);
             // 
@@ -257,9 +275,10 @@
             // 
             this.cmbWedToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWedToTime.FormattingEnabled = true;
-            this.cmbWedToTime.Location = new System.Drawing.Point(181, 121);
+            this.cmbWedToTime.Location = new System.Drawing.Point(241, 149);
+            this.cmbWedToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbWedToTime.Name = "cmbWedToTime";
-            this.cmbWedToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbWedToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbWedToTime.TabIndex = 14;
             this.cmbWedToTime.SelectedIndexChanged += new System.EventHandler(this.cmbWedToTime_SelectedIndexChanged);
             // 
@@ -267,9 +286,10 @@
             // 
             this.cmbWedFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbWedFromTime.FormattingEnabled = true;
-            this.cmbWedFromTime.Location = new System.Drawing.Point(95, 121);
+            this.cmbWedFromTime.Location = new System.Drawing.Point(127, 149);
+            this.cmbWedFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbWedFromTime.Name = "cmbWedFromTime";
-            this.cmbWedFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbWedFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbWedFromTime.TabIndex = 13;
             this.cmbWedFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbWedFromTime_SelectedIndexChanged);
             // 
@@ -277,9 +297,10 @@
             // 
             this.cmbTueToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTueToTime.FormattingEnabled = true;
-            this.cmbTueToTime.Location = new System.Drawing.Point(181, 95);
+            this.cmbTueToTime.Location = new System.Drawing.Point(241, 117);
+            this.cmbTueToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTueToTime.Name = "cmbTueToTime";
-            this.cmbTueToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbTueToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbTueToTime.TabIndex = 12;
             this.cmbTueToTime.SelectedIndexChanged += new System.EventHandler(this.cmbTueToTime_SelectedIndexChanged);
             // 
@@ -287,9 +308,10 @@
             // 
             this.cmbTueFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTueFromTime.FormattingEnabled = true;
-            this.cmbTueFromTime.Location = new System.Drawing.Point(95, 95);
+            this.cmbTueFromTime.Location = new System.Drawing.Point(127, 117);
+            this.cmbTueFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbTueFromTime.Name = "cmbTueFromTime";
-            this.cmbTueFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbTueFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbTueFromTime.TabIndex = 11;
             this.cmbTueFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbTueFromTime_SelectedIndexChanged);
             // 
@@ -297,9 +319,10 @@
             // 
             this.cmbMonToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonToTime.FormattingEnabled = true;
-            this.cmbMonToTime.Location = new System.Drawing.Point(181, 69);
+            this.cmbMonToTime.Location = new System.Drawing.Point(241, 85);
+            this.cmbMonToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMonToTime.Name = "cmbMonToTime";
-            this.cmbMonToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbMonToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbMonToTime.TabIndex = 10;
             this.cmbMonToTime.SelectedIndexChanged += new System.EventHandler(this.cmbMonToTime_SelectedIndexChanged);
             // 
@@ -307,9 +330,10 @@
             // 
             this.cmbMonFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbMonFromTime.FormattingEnabled = true;
-            this.cmbMonFromTime.Location = new System.Drawing.Point(95, 69);
+            this.cmbMonFromTime.Location = new System.Drawing.Point(127, 85);
+            this.cmbMonFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbMonFromTime.Name = "cmbMonFromTime";
-            this.cmbMonFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbMonFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbMonFromTime.TabIndex = 9;
             this.cmbMonFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbMonFromTime_SelectedIndexChanged);
             // 
@@ -317,9 +341,10 @@
             // 
             this.cmbSunToTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSunToTime.FormattingEnabled = true;
-            this.cmbSunToTime.Location = new System.Drawing.Point(181, 43);
+            this.cmbSunToTime.Location = new System.Drawing.Point(241, 53);
+            this.cmbSunToTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSunToTime.Name = "cmbSunToTime";
-            this.cmbSunToTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbSunToTime.Size = new System.Drawing.Size(99, 24);
             this.cmbSunToTime.TabIndex = 8;
             this.cmbSunToTime.SelectedIndexChanged += new System.EventHandler(this.cmbSunToTime_SelectedIndexChanged);
             // 
@@ -327,72 +352,80 @@
             // 
             this.cmbSunFromTime.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSunFromTime.FormattingEnabled = true;
-            this.cmbSunFromTime.Location = new System.Drawing.Point(95, 43);
+            this.cmbSunFromTime.Location = new System.Drawing.Point(127, 53);
+            this.cmbSunFromTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSunFromTime.Name = "cmbSunFromTime";
-            this.cmbSunFromTime.Size = new System.Drawing.Size(75, 21);
+            this.cmbSunFromTime.Size = new System.Drawing.Size(99, 24);
             this.cmbSunFromTime.TabIndex = 7;
             this.cmbSunFromTime.SelectedIndexChanged += new System.EventHandler(this.cmbSunFromTime_SelectedIndexChanged);
             // 
             // lblSaturday
             // 
             this.lblSaturday.AutoSize = true;
-            this.lblSaturday.Location = new System.Drawing.Point(21, 202);
+            this.lblSaturday.Location = new System.Drawing.Point(28, 249);
+            this.lblSaturday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSaturday.Name = "lblSaturday";
-            this.lblSaturday.Size = new System.Drawing.Size(49, 13);
+            this.lblSaturday.Size = new System.Drawing.Size(65, 17);
             this.lblSaturday.TabIndex = 6;
             this.lblSaturday.Text = "Saturday";
             // 
             // lblFriday
             // 
             this.lblFriday.AutoSize = true;
-            this.lblFriday.Location = new System.Drawing.Point(21, 176);
+            this.lblFriday.Location = new System.Drawing.Point(28, 217);
+            this.lblFriday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFriday.Name = "lblFriday";
-            this.lblFriday.Size = new System.Drawing.Size(35, 13);
+            this.lblFriday.Size = new System.Drawing.Size(47, 17);
             this.lblFriday.TabIndex = 5;
             this.lblFriday.Text = "Friday";
             // 
             // lblThursday
             // 
             this.lblThursday.AutoSize = true;
-            this.lblThursday.Location = new System.Drawing.Point(21, 150);
+            this.lblThursday.Location = new System.Drawing.Point(28, 185);
+            this.lblThursday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblThursday.Name = "lblThursday";
-            this.lblThursday.Size = new System.Drawing.Size(51, 13);
+            this.lblThursday.Size = new System.Drawing.Size(68, 17);
             this.lblThursday.TabIndex = 4;
             this.lblThursday.Text = "Thursday";
             // 
             // lblWednesday
             // 
             this.lblWednesday.AutoSize = true;
-            this.lblWednesday.Location = new System.Drawing.Point(21, 124);
+            this.lblWednesday.Location = new System.Drawing.Point(28, 153);
+            this.lblWednesday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblWednesday.Name = "lblWednesday";
-            this.lblWednesday.Size = new System.Drawing.Size(64, 13);
+            this.lblWednesday.Size = new System.Drawing.Size(83, 17);
             this.lblWednesday.TabIndex = 3;
             this.lblWednesday.Text = "Wednesday";
             // 
             // lblTuesday
             // 
             this.lblTuesday.AutoSize = true;
-            this.lblTuesday.Location = new System.Drawing.Point(21, 98);
+            this.lblTuesday.Location = new System.Drawing.Point(28, 121);
+            this.lblTuesday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTuesday.Name = "lblTuesday";
-            this.lblTuesday.Size = new System.Drawing.Size(48, 13);
+            this.lblTuesday.Size = new System.Drawing.Size(63, 17);
             this.lblTuesday.TabIndex = 2;
             this.lblTuesday.Text = "Tuesday";
             // 
             // lblMonday
             // 
             this.lblMonday.AutoSize = true;
-            this.lblMonday.Location = new System.Drawing.Point(21, 72);
+            this.lblMonday.Location = new System.Drawing.Point(28, 89);
+            this.lblMonday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMonday.Name = "lblMonday";
-            this.lblMonday.Size = new System.Drawing.Size(45, 13);
+            this.lblMonday.Size = new System.Drawing.Size(58, 17);
             this.lblMonday.TabIndex = 1;
             this.lblMonday.Text = "Monday";
             // 
             // lblSunday
             // 
             this.lblSunday.AutoSize = true;
-            this.lblSunday.Location = new System.Drawing.Point(21, 46);
+            this.lblSunday.Location = new System.Drawing.Point(28, 57);
+            this.lblSunday.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSunday.Name = "lblSunday";
-            this.lblSunday.Size = new System.Drawing.Size(43, 13);
+            this.lblSunday.Size = new System.Drawing.Size(56, 17);
             this.lblSunday.TabIndex = 0;
             this.lblSunday.Text = "Sunday";
             // 
@@ -400,10 +433,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.MaximumSize = new System.Drawing.Size(615, 0);
+            this.label1.Location = new System.Drawing.Point(16, 11);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.MaximumSize = new System.Drawing.Size(820, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(615, 26);
+            this.label1.Size = new System.Drawing.Size(819, 34);
             this.label1.TabIndex = 3;
             this.label1.Text = "Welcome to My Parental Control Software! This custom software allows me to automa" +
     "tically set/change time limits and application / website access for this compute" +
@@ -411,9 +445,11 @@
             // 
             // grpbxAppAndWebAccess
             // 
-            this.grpbxAppAndWebAccess.Location = new System.Drawing.Point(297, 115);
+            this.grpbxAppAndWebAccess.Location = new System.Drawing.Point(396, 142);
+            this.grpbxAppAndWebAccess.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.grpbxAppAndWebAccess.Name = "grpbxAppAndWebAccess";
-            this.grpbxAppAndWebAccess.Size = new System.Drawing.Size(320, 309);
+            this.grpbxAppAndWebAccess.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grpbxAppAndWebAccess.Size = new System.Drawing.Size(427, 380);
             this.grpbxAppAndWebAccess.TabIndex = 4;
             this.grpbxAppAndWebAccess.TabStop = false;
             this.grpbxAppAndWebAccess.Text = "User Application and Website Access Restrictions";
@@ -422,18 +458,20 @@
             // btnApply
             // 
             this.btnApply.Enabled = false;
-            this.btnApply.Location = new System.Drawing.Point(357, 61);
+            this.btnApply.Location = new System.Drawing.Point(476, 75);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnApply.Name = "btnApply";
-            this.btnApply.Size = new System.Drawing.Size(75, 23);
+            this.btnApply.Size = new System.Drawing.Size(100, 28);
             this.btnApply.TabIndex = 5;
             this.btnApply.Text = "Apply";
             this.btnApply.UseVisualStyleBackColor = true;
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(438, 61);
+            this.btnClose.Location = new System.Drawing.Point(584, 75);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(100, 28);
             this.btnClose.TabIndex = 6;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -442,9 +480,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 52);
+            this.label6.Location = new System.Drawing.Point(21, 64);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 13);
+            this.label6.Size = new System.Drawing.Size(116, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "Select Computer:";
             // 
@@ -452,16 +491,28 @@
             // 
             this.cmbComputerList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbComputerList.FormattingEnabled = true;
-            this.cmbComputerList.Location = new System.Drawing.Point(112, 49);
+            this.cmbComputerList.Location = new System.Drawing.Point(149, 60);
+            this.cmbComputerList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbComputerList.Name = "cmbComputerList";
-            this.cmbComputerList.Size = new System.Drawing.Size(198, 21);
+            this.cmbComputerList.Size = new System.Drawing.Size(263, 24);
             this.cmbComputerList.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(715, 79);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // MainAppWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 432);
+            this.ClientSize = new System.Drawing.Size(843, 532);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.cmbComputerList);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnClose);
@@ -471,6 +522,7 @@
             this.Controls.Add(this.grpbxTimeRestrictions);
             this.Controls.Add(this.lblSelectUser);
             this.Controls.Add(this.cmbUserList);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainAppWindow";
             this.Text = "My Parental Control Software";
             this.grpbxTimeRestrictions.ResumeLayout(false);
@@ -519,6 +571,7 @@
         private System.Windows.Forms.Button btnEnableUser;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cmbComputerList;
+        private System.Windows.Forms.Button button1;
     }
 }
 

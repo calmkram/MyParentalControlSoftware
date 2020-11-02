@@ -11,6 +11,8 @@ using System.Management;
 using System.DirectoryServices;
 using System.DirectoryServices.AccountManagement;
 using Microsoft.Win32.TaskScheduler;
+using System.Net;
+using System.Net.Sockets;
 
 namespace MyParentalControlSoftware
 {
@@ -92,6 +94,11 @@ namespace MyParentalControlSoftware
         private void cmbSunFromTime_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnSave.Enabled = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CheckLocalComputers();
         }
 
         public MainAppWindow()
@@ -585,6 +592,22 @@ namespace MyParentalControlSoftware
                 pctxLocalMachine.Dispose();
 
                 btnSave.Enabled = false;
+            }
+        }
+
+        private void CheckLocalComputers()
+        {
+            DirectoryEntry root = new DirectoryEntry("WinNT:");
+
+            foreach( DirectoryEntry computers in root.Children)
+            {
+                foreach( DirectoryEntry computer in computers.Children)
+                {
+                    if( computer.SchemaClassName == "Computer" )
+                    {
+                        MessageBox.Show(computer.Name);
+                    }    
+                }
             }
         }
     }
